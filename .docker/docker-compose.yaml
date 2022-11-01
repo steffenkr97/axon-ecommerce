@@ -1,0 +1,24 @@
+services:
+  axon-server:
+    container_name: axon-server
+    image: axoniq/axonserver:latest-jdk-11-dev
+    hostname: axonserver
+    ports:
+      - "8024:8024"
+      - "8124:8124"
+      - "8224:8224"
+    environment:
+      AXONIQ_AXONSERVER_DEVMODE_ENABLED: "true"
+      AXONIQ_AXONSERVER_SSL_ENABLED: "false"
+      AXONIQ_AXONSERVER_ACCESSCONTROL_ENABLED: "false"
+      AXONIQ_AXONSERVER_NAME: "localhost"
+      AXONIQ_AXONSERVER_HOSTNAME: "localhost"
+      AXONIQ_AXONSERVER_AUTOCLUSTER_FIRST: "localhost"
+      # activate when we have enterprise
+    networks:
+      - local-platform
+
+
+
+networks:
+  local-platform:
