@@ -8,6 +8,8 @@ Demo eCommerce platfrom using Axon Framework
 - inventory-app
   - products
   - stock
+
+
 - sales-app
 - shipment-app
 - payment-app
