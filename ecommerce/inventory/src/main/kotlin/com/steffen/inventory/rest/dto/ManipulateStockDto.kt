@@ -1,6 +1,6 @@
 package com.steffen.inventory.rest.dto
 
-data class StockDto(
+data class ManipulateStockDto(
     val productId: String,
     val diff: Int
 )

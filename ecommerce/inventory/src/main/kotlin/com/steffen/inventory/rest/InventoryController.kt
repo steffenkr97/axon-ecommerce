@@ -2,13 +2,16 @@ package com.steffen.inventory.rest
 
 import com.steffen.inventory.coreapi.commands.AddStockCommand
 import com.steffen.inventory.coreapi.commands.CreateProductCommand
+import com.steffen.inventory.coreapi.commands.ReduceStockCommand
 import com.steffen.inventory.coreapi.queries.FindStockByProductIdQuery
 import com.steffen.inventory.coreapi.queries.FindStockByProductIdQueryResult
 import com.steffen.inventory.rest.dto.ProductDto
-import com.steffen.inventory.rest.dto.StockDto
+import com.steffen.inventory.rest.dto.ManipulateStockDto
 import org.axonframework.commandhandling.gateway.CommandGateway
 import org.axonframework.queryhandling.QueryGateway
 import org.axonframework.extensions.kotlin.query
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -34,15 +37,23 @@ class InventoryController(
     }
 
     @PostMapping("/product/stock")
-    fun addStock(@RequestBody stock: StockDto): String {
+    fun manipulateStock(@RequestBody stock: ManipulateStockDto): ResponseEntity<String> {
 
-        commandGateway.send<String>(
-            AddStockCommand(
-                stock.productId,
-                stock.diff
+        return when {
+            stock.diff == 0 -> ResponseEntity<String>("Diff cannot be 0", HttpStatus.BAD_REQUEST)
+            stock.diff < 0 -> ResponseEntity(
+                commandGateway.sendAndWait<String>(
+                    ReduceStockCommand(
+                        stock.productId,
+                        stock.diff
+                    )
+                ), HttpStatus.ACCEPTED
             )
-        )
-        return "Send"
+            else -> ResponseEntity(
+                commandGateway.sendAndWait<String>(AddStockCommand(stock.productId, stock.diff)),
+                HttpStatus.ACCEPTED
+            )
+        }
     }
 
 

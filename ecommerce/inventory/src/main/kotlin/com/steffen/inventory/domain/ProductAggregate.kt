@@ -42,7 +42,6 @@ class ProductAggregate {
     fun handle(cmd: AddStockCommand) {
         require(cmd.amount > 0) { "Amount of stock must be > 0" }
         AggregateLifecycle.apply(StockChangedEvent(cmd.productId, cmd.amount))
-
     }
 
     @CommandHandler
