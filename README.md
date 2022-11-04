@@ -5,9 +5,11 @@ Demo eCommerce platfrom using Axon Framework
 
 ## Modules
 
-- inventory-app
-  - products
-  - stock
+inventory-app
+- Commands
+  - addProduct
+  - AddStockToProcuct
+  - WithdrawStockFromProduct
 
 
 - sales-app

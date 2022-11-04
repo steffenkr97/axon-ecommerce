@@ -1,9 +1,18 @@
 spring:
   application:
-    name: inventory
+    name: inventory-application
 
 server:
   port: 8000
+
+axon:
+  axonserver:
+    enabled: true
+  serializer:
+    general: jackson
+    events: jackson
+    messages: jackson
+
 
 
 springdoc:
