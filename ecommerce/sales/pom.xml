@@ -5,9 +5,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>assembly</module>
-        <module>command</module>
-        <module>query</module>
-        <module>coreapi</module>
+<!--        <module>command</module>-->
+<!--        <module>query</module>-->
+<!--        <module>coreapi</module>-->
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -16,10 +16,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.steffen</groupId>
-    <artifactId>inventory</artifactId>
+    <artifactId>sales</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>inventory</name>
-    <description>axon inventory</description>
+    <description>axon sales</description>
 
     <properties>
         <java.version>17</java.version>

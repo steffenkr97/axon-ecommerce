@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: sales-application
+
+server:
+  port: 8001
+
+axon:
+  axonserver:
+    enabled: true
+  serializer:
+    general: jackson
+    events: jackson
+    messages: jackson
+
+
+
+springdoc:
+  swagger-ui:
+    use-root-path: true
