@@ -42,7 +42,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <skip>false</skip>
-                    <mainClass>com.steffen.inventory.assembly.InventoryApplication</mainClass>
+                    <mainClass>com.steffen.inventory.assembly.InventoryApplicationKt</mainClass>
                 </configuration>
             </plugin>
         </plugins>
