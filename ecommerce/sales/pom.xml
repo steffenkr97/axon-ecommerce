@@ -18,7 +18,7 @@
     <groupId>com.steffen</groupId>
     <artifactId>sales</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>inventory</name>
+    <name>sales</name>
     <description>axon sales</description>
 
     <properties>

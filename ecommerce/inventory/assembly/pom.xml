@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <name>assembly-inventory</name>
     <artifactId>assembly</artifactId>
 
     <properties>
@@ -36,13 +37,18 @@
         </dependency>
     </dependencies>
     <build>
+        <defaultGoal>clean package</defaultGoal>
+        <sourceDirectory>src/main/kotlin</sourceDirectory>
+        <testSourceDirectory>src/test/kotlin</testSourceDirectory>
+
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <skip>false</skip>
-                    <mainClass>com.steffen.inventory.assembly.InventoryApplicationKt</mainClass>
+<!--                    <mainClass>com.steffen.inventory.assembly.InventoryApplicationKt</mainClass>-->
                 </configuration>
             </plugin>
         </plugins>
