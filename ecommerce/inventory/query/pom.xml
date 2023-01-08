@@ -10,6 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>query</artifactId>
+    <name>query-inventory</name>
+
     <dependencies>
         <dependency>
             <groupId>com.steffen</groupId>

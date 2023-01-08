@@ -5,7 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>assembly</module>
-<!--        <module>command</module>-->
+        <module>command</module>
 <!--        <module>query</module>-->
 <!--        <module>coreapi</module>-->
     </modules>
