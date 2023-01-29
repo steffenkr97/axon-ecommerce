@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>com.steffen</groupId>
-            <artifactId>coreapi</artifactId>
+            <artifactId>coreapi-inventory</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

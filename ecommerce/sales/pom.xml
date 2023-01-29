@@ -6,8 +6,8 @@
     <modules>
         <module>assembly</module>
         <module>command</module>
+        <module>coreapi</module>
         <!--        <module>query</module>-->
-        <!--        <module>coreapi</module>-->
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
